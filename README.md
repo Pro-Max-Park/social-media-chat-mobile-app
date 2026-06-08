@@ -1,50 +1,138 @@
-# Welcome to your Expo app 👋
+# 💬 Social Media Chat Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A full-stack social media mobile app built with React Native and Expo, 
+powered by Supabase as the backend. Users can sign up, create posts, 
+like and comment on posts, update their profile, and receive real-time 
+notifications — all from their mobile device.
 
-## Get started
+---
 
-1. Install dependencies
+## 📸 Screenshots
 
-   ```bash
-   npm install
-   ```
+| Welcome | Login | Sign Up |
+|---|---|---|
+| ![Welcome](assets/screenshots/welcome.png) | ![Login](assets/screenshots/login.png) | ![SignUp](assets/screenshots/signup.png) |
 
-2. Start the app
+| Home Feed | Create Post | Post Details |
+|---|---|---|
+| ![Home](assets/screenshots/home.png) | ![Create Post](assets/screenshots/newpost.png) | ![Post Details](assets/screenshots/postdetails.png) |
 
-   ```bash
-   npx expo start
-   ```
+| Profile | Edit Profile | Notifications |
+|---|---|---|
+| ![Profile](assets/screenshots/profile.png) | ![Edit Profile](assets/screenshots/editprofile.png) | ![Notifications](assets/screenshots/notifications.png) |
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 🔐 Authentication — Sign up, log in, and log out securely via Supabase Auth
+- 👤 User Profiles — View and edit profile (name, bio, address, phone, avatar)
+- 📝 Create Posts — Rich text editor with image and video attachment support
+- ❤️ Like Posts — Like and unlike posts in real time
+- 💬 Comments — Comment on posts and view post details
+- 🔔 Notifications — Receive real-time notifications on likes and comments
+- 📄 Pagination — Smooth infinite scrolling through the post feed
+- 🔄 Real-time Updates — Live feed updates powered by Supabase Realtime
+- 🖼️ Media Uploads — Upload images and videos to Supabase Storage
+- ✏️ Edit & Delete — Update or remove your own posts and profile
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🛠️ Tech Stack
 
+| Layer | Technology |
+|---|---|
+| Framework | React Native + Expo (SDK 54) |
+| Routing | Expo Router (file-based) |
+| Backend & Database | Supabase (PostgreSQL) |
+| Authentication | Supabase Auth |
+| File Storage | Supabase Storage |
+| Rich Text Editor | react-native-pell-rich-editor |
+| Image Picker | expo-image-picker |
+| File System | expo-file-system |
+| Media Playback | expo-av |
+| Icons | Hugeicons (react-native-svg) |
+| Date Formatting | moment.js |
+| HTML Rendering | react-native-render-html |
+
+---
+
+## 🗄️ Database Schema
+
+| Table | Fields |
+|---|---|
+| **users** | id, name, image, bio, address, phoneNumber, createdAt |
+| **posts** | id, body, file, userId, createdAt |
+| **postLikes** | id, postId, userId, createdAt |
+| **comments** | id, text, userId, postId, createdAt |
+| **notifications** | id, title, senderId, receiverId, data, createdAt |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js installed
+- Expo Go app on your phone or an Android/iOS emulator
+
+### Installation
+
+1. Clone the repo
 ```bash
-npm run reset-project
+git clone https://github.com/Pro-Max-Park/social-media-chat-mobile-app.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Navigate into the project folder
+```bash
+cd social-media-chat-mobile-app
+```
 
-## Learn more
+3. Install dependencies
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Start the app
+```bash
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+5. Scan the QR code with **Expo Go** (Android) or **Camera app** (iOS)
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🔧 Environment Setup
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Create a `.env` file in the root of your project and add your Supabase credentials:
+
+---
+
+## 🐛 Bugs Fixed During Development
+
+| Bug | Solution |
+|---|---|
+| Keyboard not dismissing in rich text editor | Used `blurContentEditor()` + `keyboardShouldPersistTaps="handled"` on ScrollView |
+| Supabase realtime subscription error on logout | Changed hardcoded `.channel("posts")` to `.channel(`posts-${Date.now()}`)` for a unique channel name on every mount |
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Direct messaging between users
+- [ ] Story / 24hr post feature
+- [ ] Dark mode support
+- [ ] Push notifications via Expo Notifications
+- [ ] Deploy to Google Play Store & Apple App Store
+
+---
+
+## 👨‍💻 Author
+
+**Peter Park**
+GitHub: [@Pro-Max-Park](https://github.com/Pro-Max-Park)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
