@@ -11,15 +11,15 @@ notifications — all from their mobile device.
 
 | Welcome | Login | Sign Up |
 |---|---|---|
-| ![Welcome](assets/screenshots/welcome.png) | ![Login](assets/screenshots/login.png) | ![SignUp](assets/screenshots/signup.png) |
+| <img src="assets/screenshots/welcome.png" width="200"/> | <img src="assets/screenshots/login.png" width="200"/> | <img src="assets/screenshots/signup.png" width="200"/> |
 
 | Home Feed | Create Post | Post Details |
 |---|---|---|
-| ![Home](assets/screenshots/home.png) | ![Create Post](assets/screenshots/newpost.png) | ![Post Details](assets/screenshots/postdetails.png) |
+| <img src="assets/screenshots/home.png" width="200"/> | <img src="assets/screenshots/newpost.png" width="200"/> | <img src="assets/screenshots/postdetails.png" width="200"/> |
 
 | Profile | Edit Profile | Notifications |
 |---|---|---|
-| ![Profile](assets/screenshots/profile.png) | ![Edit Profile](assets/screenshots/editprofile.png) | ![Notifications](assets/screenshots/notifications.png) |
+| <img src="assets/screenshots/profile.png" width="200"/> | <img src="assets/screenshots/editprofile.png" width="200"/> | <img src="assets/screenshots/notifications.png" width="200"/> |
 
 ---
 
